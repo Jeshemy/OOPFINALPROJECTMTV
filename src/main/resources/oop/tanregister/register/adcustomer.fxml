@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="root" xmlns:fx="http://javafx.com/fxml" fx:controller="oop.tanregister.register.AdCustomerController" prefWidth="1100" prefHeight="600">
+
+    <!-- Sidebar -->
+    <AnchorPane fx:id="sidebar" layoutX="0" layoutY="0" prefWidth="176" prefHeight="600" style="-fx-background-color: #16425B;">
+        <children>
+            <ImageView layoutX="0" layoutY="20" fitWidth="176" fitHeight="105" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../../../Img/logoH.png"/>
+                </image>
+            </ImageView>
+
+            <Button fx:id="inventoryButton" layoutX="15" layoutY="150" prefWidth="145" prefHeight="37"
+                    style="-fx-background-color: #FFFFFF; -fx-background-radius: 6;"
+                    text="INVENTORY" textFill="#16425B" onAction="#switchInventory"/>
+            <Button fx:id="mainButton" layoutX="15" layoutY="200" prefWidth="145" prefHeight="37"
+                    style="-fx-background-color: #FFFFFF; -fx-background-radius: 6;"
+                    text="MAIN MENU" textFill="#16425B" onAction="#switchMenuMenu"/>
+            <Button fx:id="customerButton" layoutX="15" layoutY="250" prefWidth="145" prefHeight="37"
+                    style="-fx-background-color: #FFFFFF; -fx-background-radius: 6;"
+                    text="CUSTOMERS" textFill="#16425B" onAction="#switchCustomer"/>
+            <Button fx:id="signOutButton" layoutX="15" layoutY="500" prefWidth="145" prefHeight="37"
+                    style="-fx-background-color: #16425B;" text="SIGN OUT" textFill="WHITE"
+                    onAction="#handleSignOut">
+                <graphic>
+                    <ImageView fitWidth="22" fitHeight="22">
+                        <image>
+                            <Image url="@../../../Img/signout.png"/>
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </children>
+    </AnchorPane>
+
+    <!-- Main Panel -->
+    <AnchorPane fx:id="mainPanel" layoutX="180" layoutY="0" prefWidth="920" prefHeight="600">
+        <children>
+            <Label layoutX="20" layoutY="20" text="Order Information"
+                   style="-fx-text-fill: WHITE; -fx-font-size: 18px; -fx-font-family: 'Montserrat Bold';"/>
+
+            <TableView fx:id="orderTable" layoutX="20" layoutY="60" prefWidth="880" prefHeight="520"
+                       style="-fx-background-color: WHITE; -fx-background-radius: 8; -fx-border-color: #2F6690; -fx-border-radius: 3; -fx-border-width: 1.5;">
+                <columns>
+                    <TableColumn fx:id="userID" text="Customer ID" prefWidth="120"/>
+                    <TableColumn fx:id="productID" text="Product ID" prefWidth="120"/>
+                    <TableColumn fx:id="orderTotal" text="Total (₱)" prefWidth="120"/>
+                    <TableColumn fx:id="productDate" text="Date" prefWidth="120"/>
+                    <TableColumn fx:id="productStatus" text="Status" prefWidth="120"/>
+                </columns>
+            </TableView>
+        </children>
+    </AnchorPane>
+</AnchorPane>
